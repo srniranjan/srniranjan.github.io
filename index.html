@@ -12,20 +12,18 @@
 
             const observerOptions = {
                 root: null,
-                rootMargin: '-20% 0px -70% 0px', // Adjust these values to control when the highlight triggers
+                rootMargin: '-20% 0px -70% 0px', 
                 threshold: 0
             };
 
             function updateActiveLink(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Remove active class from all links
                         navLinks.forEach(link => {
                             link.classList.remove('active');
                             link.setAttribute('aria-current', 'false');
                         });
 
-                        // Add active class to corresponding link
                         const activeId = entry.target.id;
                         const activeLink = document.querySelector(`.nav a[href="#${activeId}"]`);
                         if (activeLink) {
@@ -64,16 +62,23 @@
                   <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
                      <div>
                         <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"><a href="/">Niranjan Salimath</a></h1>
-                        <h2 class="mt-3 text-md font-medium tracking-tight text-slate-200 sm:text-xl">Software wrangler | Math enthusiast | Food explorer</h2>
-                        <p class="mt-4 leading-normal">"Sometimes science is more art than science, Morty. Lot of people don't get that." — Rick Sanchez</p>
+                        <h2 class="mt-3 text-md font-medium tracking-tight text-slate-200 sm:text-xl">AI | Software | Startups</h2>
                         <nav class="nav hidden lg:block" aria-label="In-page jump links">
                            <ul class="mt-16 w-max">
                               <li><a class="group flex items-center py-3 active" href="#about"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#experience"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Experience</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#services"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Services</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#training"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Training</span></a></li>
+                              <li><a class="group flex items-center py-3" href="#engineering"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">AI/ML Expertise</span></a></li>
+                              <li><a class="group flex items-center py-3" href="#entreprenuership"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Entreprenuership</span></a></li>
+                              <li><a class="group flex items-center py-3" href="#training"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">ML Training</span></a></li>
+                              <li><a class="group flex items-center py-3" href="#community"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Community</span></a></li>
                            </ul>
                         </nav>
+                     </div>
+                     <div>
+                        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                           <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                              <a href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
+                           </span>
+                        </button>
                      </div>
                      <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
                         <li class="mr-5 shrink-0 text-xs">
@@ -106,26 +111,40 @@
                      </ul>
                   </header>
                   <main id="content" class="pt-24 lg:w-[52%] lg:py-24">
-                     <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
+                     <section id="about" class="scroll-mt-16 lg:scroll-mt-24" aria-label="About me">
                         <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
                         </div>
                         <div class="text-slate-200">
-                           <p class="mb-4">If life were a multiverse, I'd be the version of me that's always cooking, coding, or solving for x. Welcome to my little corner of the cosmos!</p>
+                           <p class="mt-4 mb-4 text-slate-400">"The beginning of wisdom is the definition of terms." — Socrates</p>
+                           <p class="mb-4">This principle has shaped everything I do.</p>
                            <p class="mb-4">
-                            With 20 years of experience in software development and over a decade as a CTO, I've spent my career building and scaling startups, often across geographically distributed setups. I've learned to thrive in chaos. Whether it's scaling a startup across galaxies or debugging code that feels like it came from a parallel universe, I love turning ambitious ideas into real, impactful solutions. I love challenges unique to startups and love leading teams to deliver impactful solutions, transforming chaos into code and ideas into products.
+                              Whether it's building AI/ML systems, navigating the chaos of early-stage startups, or perfecting a dish in the kitchen, I always break things down to their core and build up from first principles.
                            </p>
                            <p class="mb-4">
-                            Math isn't just numbers—it's the cheat code to understanding the universe. I've been obsessed with its overlap with computer science since I was a wee Morty. Whether teaching others how math solves seemingly unsolvable problems or geeking out over elegant proofs, I see math as the genius behind every great solution.
+                              I'm Niranjan Salimath—welcome to my corner of the cosmos.
                            </p>
                            <p class="mb-4">
-                            Food is my passport to the world. Whether sampling street food in Bangkok or enjoying a taco truck in Austin, I travel far and wide to explore cuisines that help me connect with cultures. It's also how I met and bonded with my wife, proving that good food really does bring people together. When I'm not eating, I'm in the kitchen experimenting with fermentation, pickling, or deep-frying something delicious.
+                              Over the past 20 years, I've spent most of my career building startups, often in a CTO capacity. Since earning my Master's from Carnegie Mellon (CMU) in 2009, I've specialized in AI/ML, working on everything from foundational models to cutting-edge applications.
+                           </p>
+                           <p class="mb-4">
+                              Beyond engineering, I'm passionate about teaching. I run a unique math club for software engineers, helping them develop a strong mathematical foundation for AI/ML.
+                           </p>
+                           <p class="mb-4">
+                              Outside of work, I'm all about food—cooking, exploring cuisines, and traveling across continents to experience flavors firsthand. And to navigate the constant flux and challenges of both work and life, yoga keeps me centered—helping me adapt, refocus, and stay grounded.
                            </p>
                         </div>
                      </section>
-                     <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
+                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                     <section id="engineering" class="scroll-mt-16 lg:scroll-mt-24" aria-label="engineering">
                         <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Experience</h2>
+                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">AI/ML and Engineering</h2>
+                        </div>
+                        <div class="text-slate-200">
+                           <p class="mb-4">I have been working in AI/ML since my master's at Carnegie Mellon University in 2009, gaining deep expertise in building intelligent systems. Over the years, I’ve led teams and built products across a wide range of AI/ML applications—from social credit scoring using social media data to leveraging GenAI and LLMs for video creation.</p>
+                           <p class="mb-4">My approach to AI/ML is rooted in first principles thinking. I encourage my teams to break down complex problems into their fundamental components, ensuring we apply the right level of complexity. Rather than blindly chasing the latest trends, I focus on making strategic decisions that balance innovation with practicality. Often, the best solutions don’t require cutting-edge models—leveraging simple statistical methods and fundamental linear algebra can get us surprisingly close while keeping systems efficient, interpretable, and scalable.</p>
+                           <p class="mb-4">I have hired, scaled, and led high-performing ML and engineering teams, ensuring they have the right mix of research depth and production pragmatism. From designing ML infrastructure and data pipelines to deploying models at scale, I drive both technical execution and strategic decision-making. My focus is always on delivering AI/ML solutions that are not just innovative but also practical, cost-effective, and aligned with business goals.</p>
+                           <p class="mb-4">Following are some AI/ML products I have built:</p>
                         </div>
                         <div>
                            <ol class="group/list">
@@ -144,7 +163,8 @@
                                              </div>
                                           </div>
                                        </h3>
-                                       <p class="mt-2 text-sm leading-normal">Joined Augie Studio as a founding engineer and have been a core part of the engineering team, contributing to the journey from developing the initial MVP to the beta launch and now achieving commercial success. In addition to collaborating with an exceptionally talented and experienced engineering team, I lead development efforts by building and managing a dedicated team of developers and testers in India.</p>
+                                       <p class="mt-2 text-sm leading-normal">At Augie Studio, I led the development of an AI-driven video creation platform using cutting-edge GenAI and LLM technologies. We built features like script generation, auto-storyboarding, and voice synthesis with LLMs, while diffusion models and custom-trained Hugging Face models powered media generation and search.</p>
+                                       <p class="mt-2 text-sm leading-normal">Beyond building the tech, I scaled and led the engineering team, leveraging my network to hire top-tier talent in India. I implemented best practices in hiring, mentoring, and execution, ensuring rapid development in a fast-paced startup environment. </p>
                                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                                           <li class="mr-1.5 mt-2">
                                              <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">GenAI</div>
@@ -181,54 +201,12 @@
                                             <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                                                <span>
-                                                  Chief Technology Officer · Yellow
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">As CTO at Yellow, I built an in-house engineering team from scratch, transitioning all development efforts from an external agency. With a small team of talented junior engineers, I successfully delivered the company’s web and mobile applications and implemented a robust security infrastructure. Despite navigating tight funding constraints, I ensured consistent and high-quality software delivery by maximizing resources and fostering a results-driven culture.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">NestJS</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Flutter</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React.js</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Key Management</div>
-                                        </li>
-                                       <li class="mr-1.5 mt-2">
-                                         <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Information Security</div>
-                                       </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Dec 2021 - Jan 2023</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
                                                 Independent Consultant · American Red Cross
                                                </span>
                                              </div>
                                          </div>
                                       </h3>
-                                      <p class="mt-2 text-sm leading-normal">Supported ARC in enhancing and developing chatbots for their marketing initiatives. Took ownership of a legacy chatbot, leading a comprehensive re-architecture to improve its performance and reliability. Developed a robust test harness to ensure consistent functionality and implemented advanced NLP techniques for more human-like and accurate responses. Additionally, enhanced the chatbot's usability by integrating it with external systems, significantly improving its value and efficiency for the organization.</p>
+                                      <p class="mt-2 text-sm leading-normal">Worked with ARC to enhance and develop NLP-driven chatbots for their marketing initiatives. Took ownership of a legacy conversational AI system, leading a complete re-architecture to improve its scalability, performance, and robustness. Designed a comprehensive test harness to ensure consistent intent recognition and response accuracy. Leveraged state-of-the-art NLP techniques, including contextual embeddings, and entity recognition, to enhance response generation and improve dialogue coherence. Additionally, integrated the chatbot with external APIs and enterprise systems, significantly enhancing its usability, automation capabilities, and overall efficiency.</p>
                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                                          <li class="mr-1.5 mt-2">
                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Natural Language Processing (NLP)</div>
@@ -270,7 +248,7 @@
                                              </div>
                                          </div>
                                       </h3>
-                                      <p class="mt-2 text-sm leading-normal">Pirates was a platform designed to connect small product startups with software projects from established enterprises, enabling startups to generate revenue without relying on investor funding while providing enterprises access to agile talent in smaller startups. Through this venture, we collaborated closely with Google’s ML offerings, delivering AI solutions to several major organizations. Our innovative work earned us the opportunity to present at Google Cloud Next 2017, showcasing the impact of our platform.</p>
+                                      <p class="mt-2 text-sm leading-normal">Pirates was a B2B platform designed to bridge the gap between early-stage product startups and enterprise software projects, enabling startups to generate revenue independently of investor funding while giving enterprises access to agile, high-caliber startup talent. As part of this initiative, we closely collaborated with Google's ML ecosystem, deploying AI-driven solutions for several major organizations. Our work involved leveraging Google Cloud AI, and TensorFlow to develop scalable, production-ready machine learning applications. The platform's impact and innovation earned us the opportunity to present at Google Cloud Next 2017, highlighting our contributions to the enterprise AI landscape.</p>
                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                                          <li class="mr-1.5 mt-2">
                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
@@ -300,69 +278,6 @@
                               <li class="mb-12">
                                 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Sep 2013 - Jun 2019</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                  Co-Founder · BeaglesLoft
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">In Bangalore, we identified a gap in community spaces for entrepreneurs, designers, and creators similar to those in New York or San Francisco. To address this, we founded BeaglesLoft—a vibrant space for these individuals to connect, co-work, and host events. As the founder, I successfully ran the space for six years, leading all marketing and evangelizing efforts to build a thriving and engaged community.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Community Development</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Community Outreach</div>
-                                         </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Jan 2017 - Oct 2017</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                  Co-Founder · AskSpock
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">AskSpock aimed to fill the gap for software engineers seeking resources beyond StackOverflow by providing on-demand access to a network of experts. The platform enabled engineers to chat with experts whenever they encountered challenges, helping them quickly overcome roadblocks. As co-founder and CTO, I led the development of the chat platform, managed the sourcing of experts, and spearheaded efforts to evangelize the service and attract developers to the platform.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Community Development</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Dialogflow </div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React.js</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Training</div>
-                                         </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                                    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Aug 2012 - Dec 2014</header>
                                    <div class="z-10 sm:col-span-6">
                                       <h3 class="font-medium leading-snug text-slate-200">
@@ -375,7 +290,7 @@
                                              </div>
                                          </div>
                                       </h3>
-                                      <p class="mt-2 text-sm leading-normal">Haggle was my first startup venture, designed to empower users to leverage their social data to "haggle" for discounts. At its peak, the platform hosted 300 registered vendors and achieved around 1,000 daily active users. As a co-founder and CTO, I applied my software development expertise along with analytics, ML, and statistics skills from my master’s program. Beyond technical contributions, I took on diverse responsibilities, including building and managing teams, overseeing offshore software development, engaging with investors, and taking full ownership of the product lifecycle.</p>
+                                      <p class="mt-2 text-sm leading-normal">Haggle was built to harness social data and network effects to optimize discount negotiations. I applied machine learning and statistical modeling to analyze user behavior, predict engagement, and refine discount recommendations. The platform processed large-scale social data, leveraging predictive analytics and optimization techniques to enhance vendor-user interactions. Additionally, I developed ML-driven ranking algorithms to surface the most relevant restaurants and implemented A/B testing frameworks to measure user response. These data-driven approaches helped scale Haggle to 300 vendors and 1,000 daily active users at its peak.</p>
                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                                          <li class="mr-1.5 mt-2">
                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
@@ -408,249 +323,125 @@
                                    </div>
                                 </div>
                               </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Nov 2009 - Jul 2012</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                  Senior Application Developer · ThoughtWorks
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">Managed the implementation of content management systems for Boston Consulting Group's (BCG) marketing teams and oversaw the development of two key marketing websites. Acted as the primary liaison between BCG and their offshore vendors, ensuring effective communication and successful delivery of software solutions.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">C#</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Content Management Systems (CMS)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JavaScript</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Team Management</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Agile Methodologies</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Scrum</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Test-Driven Development</div>
-                                         </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Nov 2007 - Jul 2008</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                  Senior software engineer · BMC Software
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">After the acquisition of my previous company by BMC, I transitioned to BMC to oversee the knowledge transfer process. During this time, I managed and trained a team on the tech stack and codebase, ensuring a smooth handover. This acquisition afforded me the opportunity to move to the US and pursue my master’s degree, marking a pivotal step in my career journey.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">C++</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Visual C++</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">COM</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">DCOM</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Managed C++</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Spring MVC</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">NetBeans</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Applets</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Applets</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java Virtual Machine (JVM)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java Swing</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java Native Interface (JNI)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JSSE</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JRE</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Team Management</div>
-                                         </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Jul 2005 - Oct 2007</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                  Software engineer · ProactiveNet Software
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">I began my career by choosing a startup over established MNCs, motivated by a desire to accelerate my growth and hands-on learning. The challenging, high-pressure environment allowed me to tackle complex problems, take on significant responsibilities, and rapidly develop my skills. This experience laid a strong foundation for my future expertise in software delivery and shaped my approach to solving real-world challenges.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">C++</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Visual C++</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">COM</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">DCOM</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Managed C++</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Spring MVC</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">NetBeans</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Applets</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Applets</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java Virtual Machine (JVM)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java Swing</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Java Native Interface (JNI)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JSSE</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JRE</div>
-                                         </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
                            </ol>
                         </div>
                      </section>
-                     <section id="services" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Software Services">
+                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                     <section id="entreprenuership" class="scroll-mt-16 lg:scroll-mt-24" aria-label="Software Services">
                         <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                            <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Services</h2>
                         </div>
                         <div class="text-slate-200">
-                          <p class="mb-4">With nearly 20 years of experience in software development, including over a decade as a CTO building startups in geographically distributed setups, I’m now channeling my expertise into offering tailored solutions. My approach centers on:</p>
+                          <p class="mb-4">Over the years in my career, I have built and scaled multiple startups, taking ideas from concept to execution. As a serial entrepreneur, I have led product development, assembled and managed high-performing teams, and navigated the complexities of early-stage growth. I approach challenges with first-principles thinking, ensuring that solutions are both innovative and practical. My experience spans AI/ML, engineering, and offshore team building, allowing startups to operate efficiently while staying ahead of the curve. From launching new products to optimizing operations, I thrive in the fast-paced, ever-evolving startup landscape.</p>
+                          <p class="mb-4">Startups I am most proud of:</p>
                            <ul class="group/list">
                               <li class="mb-12">
-                                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                                     <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <div class="z-10 sm:order-2 sm:col-span-6">
-                                       <h3>
-                                          <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                             <span>
-                                                Creating an Offshore Model That Truly Works:
-                                             </span>
-                                          </a>
+                                    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Sep 2014 - Jul 2019</header>
+                                    <div class="z-10 sm:col-span-6">
+                                       <h3 class="font-medium leading-snug text-slate-200">
+                                          <div>
+                                             <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener" aria-label="Chief Technology Officer, Pirates (opens in a new tab)">
+                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                                <span>
+                                                 Chief Technology Officer · Pirates
+                                                </span>
+                                              </div>
+                                          </div>
                                        </h3>
-                                       <p class="mt-2 text-sm leading-normal">Drawing from years of hands-on experience, I’ve mastered the nuances of navigating and optimizing offshore setups. Here’s how an offshore presence can benefit you:</p>
-                                       <p class="mt-2 text-sm leading-normal"><span class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">Cost Efficiency:</span> Save significantly on development costs from day one.</p>
-                                       <p class="mt-2 text-sm leading-normal"><span class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">Scalability:</span> Quickly scale your team up or down across diverse technologies by tapping into my network within Bangalore's rich talent pool.</p>
-                                       <p class="mt-2 text-sm leading-normal"><span class="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">24-Hour Productivity:</span> Leverage time zone differences to keep your startup running round the clock.</p>
+                                       <p class="mt-2 text-sm leading-normal">Pirates was a platform designed to connect small product startups with software projects from established enterprises, enabling startups to generate revenue without relying on investor funding while providing enterprises access to agile talent in smaller startups. Through this venture, we collaborated closely with Google’s ML offerings, delivering AI solutions to several major organizations. Our innovative work earned us the opportunity to present at Google Cloud Next 2017, showcasing the impact of our platform.</p>
+                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">TensorFlow</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Kubernetes</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React.js</div>
+                                         </li>
+                                         <li class="mr-1.5 mt-2">
+                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
+                                         </li>
+                                        <li class="mr-1.5 mt-2">
+                                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
+                                        </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                               </li>
+                              <li class="mb-12">
+                                 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                                    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Aug 2012 - Dec 2014</header>
+                                    <div class="z-10 sm:col-span-6">
+                                       <h3 class="font-medium leading-snug text-slate-200">
+                                          <div>
+                                             <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
+                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                                <span>
+                                                   Co-founder and CTO · Haggle
+                                                </span>
+                                              </div>
+                                          </div>
+                                       </h3>
+                                       <p class="mt-2 text-sm leading-normal">Haggle was my first startup venture, designed to empower users to leverage their social data to "haggle" for discounts. At its peak, the platform hosted 300 registered vendors and achieved around 1,000 daily active users. As a co-founder and CTO, I applied my software development expertise along with analytics, ML, and statistics skills from my master’s program. Beyond technical contributions, I took on diverse responsibilities, including building and managing teams, overseeing offshore software development, engaging with investors, and taking full ownership of the product lifecycle.</p>
+                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Analytics</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Data Mining</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Data Visualization</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Swift (Programming Language)</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Objective-C</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python (Programming Language)</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
+                                          </li>
+                                          <li class="mr-1.5 mt-2">
+                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
+                                          </li>
+                                       </ul>
                                     </div>
                                  </div>
                               </li>
-                              <li class="mb-12">
-                                <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <div class="z-10 sm:order-2 sm:col-span-6">
-                                      <h3>
-                                         <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>
-                                               Software engineering done right:
-                                            </span>
-                                         </a>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">Over years in software development, I’ve worked across a vast spectrum of technologies, witnessing their evolution and gaining valuable insights along the way. This perspective allows me to navigate today’s challenges with clarity, drawing from a deep well of experience to make informed decisions.
-                                        I thrive in high-pressure environments, where tight budgets and timelines demand pragmatic, common-sense solutions. My expertise lies in designing software architectures that address immediate needs while setting teams up for long-term success. Like a skilled chef, I focus on creating maximum impact with minimal complexity.
-                                        Whether you need a fractional CTO to lead your team, resolve architectural challenges, or help build your first MVP, I’m here to guide you every step of the way.</p>
-                                   </div>
-                                </div>
-                             </li>
                            </ul>
                         </div>
                      </section>
-                     <section id="training" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                     <section id="training" class="scroll-mt-16 lg:scroll-mt-24" aria-label="Software Services">
                         <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Training</h2>
+                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">ML Training</h2>
                         </div>
                         <div class="text-slate-200">
-                          <p class="mb-4">AI and machine learning have been hot topics for years, and the rise of Large Language Models (LLMs) and Generative AI has opened the door for software engineers to move beyond simply using these tools in their daily work. Today, there’s an opportunity to build custom solutions with locally deployed LLMs, tailor models to specific use cases, and even contribute to the ongoing development and refinement of LLM technology itself. However, diving into AI/ML can feel daunting, as many engineers struggle with the mathematical foundations that are crucial to mastering this field.</p>
-                          <p class="mb-4">Most resources either assume you already know the required math or claim that the math is "abstracted" by APIs and frameworks. Unfortunately, this often leaves developers without the tools to truly understand how these systems work or how to use them effectively.</p>
-                          <p class="mb-4">A problem-first approach makes AI/ML training practical and accessible. By focusing on real-world challenges like image classification, the precise mathematical concepts required to tackle the problem are introduced and contextualized. This method not only simplifies complex problems but also demystifies widely used APIs, equipping developers with a deeper understanding of their inner workings and enabling them to use these tools more effectively.</p>
-                          <p class="mb-4">Here are the courses I currently offer:</p>
-                           <ul class="group/list">
+                          <p class="mb-4">Many software engineers struggle to transition into data science and ML, despite their strong programming backgrounds. The barrier isn't just math—it's the way it's presented. Most of the core mathematical concepts behind ML, like linear algebra and calculus, were already covered in high school, but they were never taught with real-world applications in mind.</p>
+                          <p class="mb-4">My training program bridges this gap by helping engineers revisit and apply the math they already know, rather than overwhelming them with theory. More importantly, I emphasize first-principles thinking, giving them the confidence to break down complex ML concepts, go deep when needed, and learn new mathematical tools as the problem demands. By focusing on intuitive understanding and hands-on problem-solving, the program equips engineers with the foundational skills needed to navigate an AI-first world—not just as users of ML tools, but as creators who truly understand how they work.</p>
+                          <p class="mb-4">
+                              <span>Structured in three parts, this training systematically builds toward a deep, intuitive grasp of transformer architecture—an essential skill in today's AI-first world.</span>
+                              <span><a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sign up to stay updated on the launch,</a></span> 
+                              <span>and here's a sneak peek of what to expect!</span>
+                           </p>
+                          <ul class="group/list">
                               <li class="mb-12">
                                  <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                                     <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
@@ -659,47 +450,59 @@
                                           <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
                                              <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                                              <span>
-                                                Image classifier using middle school math:
+                                                Module 1: Developing the Right Mindset for Modeling ML Problems
                                              </span>
                                           </a>
                                        </h3>
-                                       <p class="mt-2 text-sm leading-normal">This introductory course provides a clear and practical overview of the unique, problem-first approach to AI/ML training. It breaks down the linear algebra concepts that power machine learning, helping you master essentials like matrix multiplication, dimensionality reduction, and linear transformations. By the end of the course, you’ll have the skills to build a simple image classifier from scratch—no libraries, no frameworks, just you and your newfound math superpowers.</p>
+                                       <p class="mt-2 text-sm leading-normal">This module focuses on developing the foundational mindset needed to approach ML problems effectively. Unlike traditional coding, ML requires understanding how to represent problems mathematically. If we don't grasp what vectors model our problem, which space they exist in, what solution space we're aiming for, and how to transition between them, we're merely feeding numbers into an API and hoping for the best—akin to the infinite mokey theorem.</p>
+                                       <p class="mt-2 text-sm leading-normal">Here, we revisit the linear algebra we've already learned and build upon it, mastering concepts like vector spaces, matrix decomposition, projections, and norms. More importantly, we apply these "lego blocks" to real ML problems, learning not just the theory but how to wield these tools effectively in practical scenarios.</p>
                                     </div>
                                  </div>
                               </li>
                               <li class="mb-12">
-                                <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <div class="z-10 sm:order-2 sm:col-span-6">
-                                      <h3>
-                                         <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>
-                                               Neural network from scratch
-                                            </span>
-                                         </a>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">Say goodbye to treating neural networks as mysterious black boxes! This course dives deep into how they work under the hood, building on the linear algebra foundation from the previous course. You’ll explore key concepts like linear regression, activation functions, and statistical learning while delving into the calculus behind backpropagation—the algorithm at the heart of how neural networks learn. By the end, you’ll not only know how to build your own toy neural network but also gain the skills to use neural networks effectively for your projects. With the mystery stripped away, you’ll be ready to unlock their full potential.</p>
-                                   </div>
-                                </div>
-                             </li>
-                             <li class="mb-12">
-                              <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                 <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                 <div class="z-10 sm:order-2 sm:col-span-6">
-                                    <h3>
-                                       <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                          <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                          <span>
-                                             Transformer architecture and building your own GPT
-                                          </span>
-                                       </a>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">LLMs are everywhere right now, but don’t stress—they need not replace you. Instead, this course empowers you to take control and use them to your advantage. Building on the concepts from the previous courses, we’ll dive deep into the transformer architecture and break down the groundbreaking "Attention is All You Need" paper to understand how LLMs tick. By the end, you’ll not only build your own custom GPT but also have an under-the-hood understanding of LLMs, the skills to deploy them locally and train them for your own use cases. This is the ultimate re-skilling every software engineer needs to thrive in today’s AI-powered world.</p>
+                                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                                    <div class="z-10 sm:order-2 sm:col-span-6">
+                                       <h3>
+                                          <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
+                                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                             <span>
+                                                Module 2: Deconstructing Neural Networks to Build Intuition
+                                             </span>
+                                          </a>
+                                       </h3>
+                                       <p class="mt-2 text-sm leading-normal">Neural networks aren't magic—they're just math! This course demystifies how they work, building on your linear algebra foundation to give you a deep, hands-on understanding. You'll break down core concepts like linear regression, activation functions, and statistical learning while mastering the calculus behind backpropagation—the key to how neural networks actually learn. By the end, you won't just be following tutorials or tweaking hyperparameters blindly; you'll have the confidence to build, optimize, and truly understand neural networks, making you a far more effective AI/ML practitioner.</p>
+                                    </div>
                                  </div>
-                              </div>
-                           </li>
+                              </li>
+                              <li class="mb-12">
+                                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                                    <div class="z-10 sm:order-2 sm:col-span-6">
+                                       <h3>
+                                          <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
+                                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                             <span>
+                                                Module 3: Attention is All You Need
+                                             </span>
+                                          </a>
+                                       </h3>
+                                       <p class="mt-2 text-sm leading-normal">LLMs are everywhere right now, but don't stress—they need not replace you. Instead, this course empowers you to take control and use them to your advantage. Building on the concepts from the previous courses, we'll dive deep into the transformer architecture and break down the groundbreaking "Attention is All You Need" paper to understand how LLMs tick. By the end, you'll not only build your own custom GPT but also have an under-the-hood understanding of LLMs, the skills to deploy them locally and distill them for your own use cases. This is the ultimate re-skilling every software engineer needs to thrive in today's LLM-powered world.</p>
+                                    </div>
+                                 </div>
+                              </li>
                            </ul>
+                        </div>
+                     </section>
+                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                     <section id="community" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Community</h2>
+                        </div>
+                        <div class="text-slate-200">
+                          <p class="mb-4">Community has always been at the heart of everything I do. I firmly believe that the best ideas emerge in environments where people can exchange knowledge, challenge each other, and build together. This belief led me to create BeaglesLoft, a collaborative space that I ran for six years, where entrepreneurs, technologists, and creatives came together to share ideas, experiment, and push the boundaries of innovation. It became a hub for meaningful discussions, hands-on learning, and startup incubation, reinforcing my conviction that a strong community accelerates both individual and collective growth.</p>
+                          <p class="mb-4">In addition to fostering startup communities, I have also been running a math club for the past seven years, helping software engineers strengthen their understanding of AI/ML fundamentals. Many developers struggle with the mathematical foundations of ML, and I’ve found that learning in a collaborative setting makes the process more intuitive and engaging. Whether in startups, technology, or education, I have seen firsthand how the right community can empower people to solve complex problems and achieve more than they could alone.</p>
+                          <p class="mb-4">These communities have also been instrumental in my own journey. Be it quick hiring, seeking advice from seasoned entrepreneurs, or staying plugged into the startup and developer ecosystem, I have consistently relied on these networks. They have given me access to exceptional talent, helped me navigate tough decisions, and ensured that I stay at the cutting edge of technology and business.</p>
                         </div>
                      </section>
                   </main>
