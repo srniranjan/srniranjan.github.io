@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Niranjan Salimath</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/b0930ecf30.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --background: #FFFDF2;
+            --cta: #00b4d8;
+            --border: #FFFFFF;
+            --highlight: #023e8a;
+            --brand: #0096c7;
+            --brand-text: #FFFFFF;
+        }
+
+        .navbar {
+            padding: 1.2rem 0;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--highlight);
+        }
+
+        body .title {
+            color: var(--highlight);
+        }
+
+        .hero figure {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta {
+            border-color: var(--cta) !important;
+            color: var(--cta) !important;
+        }
+
+        .footer {
+            --bulma-footer-padding: 3rem 1.5rem 3rem;
+        }
+
+        .footer p {
+            color: var(--highlight);
+        }
+
+        li span {
+            font-weight: 700 !important;
+        }
+
+        .main-section {
+            padding-top: 3rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .hero {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar has-background-inherit" role="navigation">
+        <div class="content">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/"><i class="fa fa-thin fa-house fa-2x"></i></a>
+            </div>
+        </div>
+    </nav>
+    <section class="hero has-text-centered">
+        <div class="columns is-centered">
+            <div class="column">
+                <figure class="image is-inline-block">
+                    <img src="haggle-logo.png" />
+                </figure>
+                <h1 class="title">Case Study: Building Haggle - A Personalized Pricing Engine for Mobile
+                    Commerce</h1>
+            </div>
+        </div>
+    </section>
+    <section class="intro main-section">
+        <div class="content">
+            <h1 class="title">Introduction</h1>
+            <p>Haggle was an ambitious attempt to revolutionize mobile commerce by allowing users to negotiate
+                personalized prices with restaurants based on their social and purchase history. As the CTO and
+                co-founder, I led the development of a data-driven pricing engine that leveraged machine
+                learning (ML) and social data analytics. Over a span of three years, we raised $500K in angel
+                funding, onboarded 100 restaurants, and built a platform that saw peak Monthly Active Users
+                (MAU) of 50,000 and Daily Active Users (DAU) of 5,000.</p>
+        </div>
+    </section>
+    <section class="problem main-section">
+        <div class="content">
+            <h1 class="title">Problem Statement</h1>
+            <p>Traditional restaurant pricing lacked personalization. Loyal customers, high-spending users, and
+                social influencers were often treated the same as first-time visitors. Haggle sought to empower
+                users by allowing them to prove their value to restaurants and negotiate discounts based on four
+                key scores:</p>
+            <ol>
+                <li><span>History Score</span> - Frequency of past visits and order values.</li>
+                <li><span>Loyalty Score</span> - Consistency in returning to the same restaurant.</li>
+                <li><span>Social Influence Score</span> - Online engagement, reviews, and reach.</li>
+                <li><span>Purchasing Power Score</span> - Spending capacity based on transaction history.</li>
+            </ol>
+        </div>
+    </section>
+    <section class="scoring main-section">
+        <div class="content">
+            <h1 class="title">Data Collection & Scoring Model</h1>
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <p>The core challenge was developing a robust scoring model that could assess users fairly
+                        and
+                        dynamically. We collected and processed data from multiple sources:</p>
+                    <ul>
+                        <li><span>Transaction Data:</span> Users linked their payment methods, allowing us to
+                            analyze
+                            spending habits.</li>
+                        <li><span>Social Media Feeds:</span> We integrated with platforms like Instagram,
+                            Twitter, and
+                            Facebook to measure engagement and influence.</li>
+                        <li><span>Restaurant Check-ins & Reviews:</span> Data from Google Reviews, Yelp, and
+                            Foursquare
+                            helped us gauge user activity.</li>
+                        <li><span>CRM & POS Integration:</span> Partnered restaurants provided anonymized
+                            transaction
+                            logs.</li>
+                    </ul>
+                    <p>Each score was computed using a combination of supervised and unsupervised learning
+                        techniques:
+                    </p>
+                    <ul>
+                        <li>
+                            <span>History Score (H):</span> Weighted sum of
+                            visit frequency and
+                            average spend.
+                            <ul>
+                                <li>
+                                    Formula:
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mi>H</mi>
+                                        <mo>=</mo>
+                                        <mi>&#x3b1;</mi>
+                                        <mo>&#xd7;</mo>
+                                        <mfrac>
+                                            <mrow>
+                                                <mi>t</mi>
+                                                <mi>o</mi>
+                                                <mi>t</mi>
+                                                <mi>a</mi>
+                                                <mi>l</mi>
+                                                <mo>&#xA0;</mo>
+                                                <mi>s</mi>
+                                                <mi>p</mi>
+                                                <mi>e</mi>
+                                                <mi>n</mi>
+                                                <mi>d</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>t</mi>
+                                                <mi>o</mi>
+                                                <mi>t</mi>
+                                                <mi>a</mi>
+                                                <mi>l</mi>
+                                                <mo>&#xA0;</mo>
+                                                <mi>v</mi>
+                                                <mi>i</mi>
+                                                <mi>s</mi>
+                                                <mi>i</mi>
+                                                <mi>t</mi>
+                                                <mi>s</mi>
+                                            </mrow>
+                                        </mfrac>
+                                        <mo>+</mo>
+                                        <mi>&#x3b2;</mi>
+                                        <mo>&#xd7;</mo>
+                                        <mi>r</mi>
+                                        <mi>e</mi>
+                                        <mi>c</mi>
+                                        <mi>e</mi>
+                                        <mi>n</mi>
+                                        <mi>c</mi>
+                                        <mi>y</mi>
+                                        <mo>_</mo>
+                                        <mi>f</mi>
+                                        <mi>a</mi>
+                                        <mi>c</mi>
+                                        <mi>t</mi>
+                                        <mi>o</mi>
+                                        <mi>r</mi>
+                                    </math>
+                                </li>
+                                <li>Normalized between 0-100.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Loyalty Score (L):</span> Exponential decay model based on return frequency.
+                            <ul>
+                                <li>
+                                    Formula:
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mi>L</mi>
+                                        <mo>=</mo>
+                                        <mn>100</mn>
+                                        <mo>&#xd7;</mo>
+                                        <msup>
+                                            <mtext>e</mtext>
+                                            <mrow>
+                                                <mo>&#x2212;</mo>
+                                                <mi>&#x3bb;</mi>
+                                                <mi>t</mi>
+                                            </mrow>
+                                        </msup>
+                                    </math>
+                                    where is the days since last visit.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Social Influence Score (S):</span> A mix of PageRank-like authority and
+                            engagement
+                            rate.
+                            <ul>
+                                <li>
+                                    Formula:
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mi>S</mi>
+                                        <mo>=</mo>
+                                        <msub>
+                                            <mi>w</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <mo>&#xd7;</mo>
+                                        <mi>f</mi>
+                                        <mi>o</mi>
+                                        <mi>l</mi>
+                                        <mi>l</mi>
+                                        <mi>o</mi>
+                                        <mi>w</mi>
+                                        <mi>e</mi>
+                                        <mi>r</mi>
+                                        <mi>s</mi>
+                                        <mo>+</mo>
+                                        <msub>
+                                            <mi>w</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>&#xd7;</mo>
+                                        <mi>e</mi>
+                                        <mi>n</mi>
+                                        <mi>g</mi>
+                                        <mi>a</mi>
+                                        <mi>g</mi>
+                                        <mi>e</mi>
+                                        <mi>m</mi>
+                                        <mi>e</mi>
+                                        <mi>n</mi>
+                                        <mi>t</mi>
+                                        <mi>s</mi>
+                                        <mo>&#x2212;</mo>
+                                        <msub>
+                                            <mi>w</mi>
+                                            <mn>3</mn>
+                                        </msub>
+                                        <mo>&#xd7;</mo>
+                                        <mi>s</mi>
+                                        <mi>p</mi>
+                                        <mi>a</mi>
+                                        <mi>m</mi>
+                                        <mo>_</mo>
+                                        <mi>p</mi>
+                                        <mi>e</mi>
+                                        <mi>n</mi>
+                                        <mi>a</mi>
+                                        <mi>l</mi>
+                                        <mi>t</mi>
+                                        <mi>y</mi>
+                                    </math>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Purchasing Power Score (P):</span> K-means clustering on income bracket
+                            estimation.
+                            <ul>
+                                <li>
+                                    Formula:
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mi>P</mi>
+                                        <mo>=</mo>
+                                        <mi>z</mi>
+                                        <mo>-</mo>
+                                        <mi>s</mi>
+                                        <mi>c</mi>
+                                        <mi>o</mi>
+                                        <mi>r</mi>
+                                        <mi>e</mi>
+                                        <mo>&#xA0;</mo>
+                                        <mi>n</mi>
+                                        <mi>o</mi>
+                                        <mi>r</mi>
+                                        <mi>m</mi>
+                                        <mi>a</mi>
+                                        <mi>l</mi>
+                                        <mi>i</mi>
+                                        <mi>s</mi>
+                                        <mi>a</mi>
+                                        <mi>t</mi>
+                                        <mi>i</mi>
+                                        <mi>o</mi>
+                                        <mi>n</mi>
+                                        <mo>&#xA0;</mo>
+                                        <mi>o</mi>
+                                        <mi>f</mi>
+                                        <mo>&#xA0;</mo>
+                                        <mi>s</mi>
+                                        <mi>p</mi>
+                                        <mi>e</mi>
+                                        <mi>n</mi>
+                                        <mi>d</mi>
+                                        <mo>&#xA0;</mo>
+                                        <mi>p</mi>
+                                        <mi>e</mi>
+                                        <mi>r</mi>
+                                        <mi>c</mi>
+                                        <mi>e</mi>
+                                        <mi>n</mi>
+                                        <mi>t</mi>
+                                        <mi>i</mi>
+                                        <mi>l</mi>
+                                        <mi>e</mi>
+                                    </math>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column is-3">
+                    <figure class="image">
+                        <img src="scoring-model.png" alt="Scoring Model Visualization">
+                    </figure>
+                </div>
+                <div class="column is-3">
+                    <figure class="image">
+                        <img src="haggling.png" alt="Scoring Model Visualization">
+                    </figure>
+                </div>
+            </div>
+            <p>Each restaurant had a unique pricing elasticity function. We trained gradient-boosted
+                decision
+                trees (GBDTs) to predict the optimal discount rate using:</p>
+            <ul>
+                <li>User scores (H, L, S, P)</li>
+                <li>Restaurant category</li>
+                <li>Time of day and week</li>
+                <li>Average table turnover rate</li>
+            </ul>
+        </div>
+    </section>
+    <section class="growth main-section">
+        <div class="content">
+            <h1 class="title">Growth and user adoption</h1>
+            <p>Haggle grew steadily after our initial launch, driven by organic word-of-mouth and influencer
+                partnerships. Key metrics at peak performance:</p>
+            <ul>
+                <li>50,000 MAU, 5,000 DAU</li>
+                <li>60% user retention after first transaction</li>
+                <li>Average discount negotiated: 8-12% per transaction</li>
+                <li>Conversion rate (users who completed a haggle process): 28%</li>
+            </ul>
+            <p>Marketing efforts included partnerships with food bloggers, who demonstrated how they secured
+                better prices using their Social Influence Score.</p>
+        </div>
+    </section>
+    <section class="challenges main-section">
+        <div class="content">
+            <h1 class="title">Challenges</h1>
+            <ol>
+                <li><span>Cold Start Problem: </span>New users lacked data, making it hard to assign initial
+                    scores. Solution: We implemented proxy scores based on demographic data and onboarding
+                    surveys.</li>
+                <li><span>Data Privacy Concerns: </span>Users were hesitant to link their social media and
+                    payments. Solution: We introduced opt-in anonymized scoring models.</li>
+                <li><span>Restaurant Resistance: </span>Many were skeptical of dynamic pricing. Solution: We
+                    provided analytics dashboards showing increased engagement and repeat visits.</li>
+                <li><span>Regulatory Hurdles: </span>Compliance with financial and data privacy laws was
+                    challenging, especially regarding payment integrations.</li>
+            </ol>
+        </div>
+    </section>
+    <section class="conclusion main-section">
+        <div class="content">
+            <h1 class="title">Conclusion</h1>
+            <p>Haggle was an ambitious endeavor that demonstrated the potential of personalized pricing in the
+                restaurant industry. While we faced challenges in scaling adoption and regulatory constraints,
+                our ML-driven scoring engine successfully allowed users to leverage their digital footprint for
+                better pricing. The experience of building Haggle reinforced key lessons in user behavior, data
+                modeling, and market dynamics, which continue to inform my approach to AI-driven commerce
+                solutions.</p>
+        </div>
+    </section> ̰
+    <footer class="footer has-background-inherit">
+        <div class="content has-text-centered">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <div class="box is-rounded has-background-inherit" style="border: 1px solid var(--highlight)">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <h1 class="title is-size-3 m-0">Collaborate?</h1>
+                            </div>
+                            <div class="column">
+                                <p>Like what you read and want to work together? I would love to hear from you</p>
+                            </div>
+                            <div class="column">
+                                <a class="button cta is-responsive is-medium is-outlined is-rounded" target="_blank"
+                                    href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
