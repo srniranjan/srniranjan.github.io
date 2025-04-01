@@ -1,514 +1,311 @@
-<!doctype html>
-<html>
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://cdn.tailwindcss.com"></script>
-      <title>Niranjan Salimath</title>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav a');
+<!DOCTYPE html>
+<html data-theme="light">
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -70% 0px', 
-                threshold: 0
-            };
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Niranjan Salimath</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+   <script src="https://kit.fontawesome.com/b0930ecf30.js" crossorigin="anonymous"></script>
+   <style>
+      :root {
+         --background: #FFFDF2;
+         --cta: #00b4d8;
+         --border: #FFFFFF;
+         --highlight: #023e8a;
+         --brand: #0096c7;
+         --brand-text: #FFFFFF;
+      }
 
-            function updateActiveLink(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            link.setAttribute('aria-current', 'false');
-                        });
+      li {
+         margin: 0.25rem;
+      }
 
-                        const activeId = entry.target.id;
-                        const activeLink = document.querySelector(`.nav a[href="#${activeId}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                            activeLink.setAttribute('aria-current', 'true');
-                        }
-                    }
-                });
-            }
+      .brand .column h1 {
+         color: var(--highlight)
+      }
 
-            const observer = new IntersectionObserver(updateActiveLink, observerOptions);
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
-    <style>
-        .nav a.active .nav-indicator {
-            width: 4rem;
-            --tw-bg-opacity: 1;
-            background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-        }
-        
-        .nav a.active .nav-text {
-            --tw-text-opacity: 1;
-            color: rgb(226 232 240 / var(--tw-text-opacity));
-        }
-    </style>
-   </head>
-   <body class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
-      <div id="__next">
-         <div class="__variable_20b187 group/spotlight relative">
-            <div class="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute" style="background: radial-gradient(600px at 1341px 210px, rgba(29, 78, 216, 0.15), transparent 80%);">
-            </div>
-            <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
-               <a href="#content" class="absolute left-0 top-0 block -translate-x-full rounded bg-gradient-to-br from-teal-400 via-blue-500 to-purple-600 px-4 py-3 text-sm font-bold uppercase tracking-widest text-white focus-visible:translate-x-0">Skip to Content</a>
-               <div class="lg:flex lg:justify-between lg:gap-4">
-                  <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
-                     <div>
-                        <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"><a href="/">Niranjan Salimath</a></h1>
-                        <h2 class="mt-3 text-md font-medium tracking-tight text-slate-200 sm:text-xl">AI | Software | Startups</h2>
-                        <nav class="nav hidden lg:block" aria-label="In-page jump links">
-                           <ul class="mt-16 w-max">
-                              <li><a class="group flex items-center py-3 active" href="#about"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">About</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#engineering"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">AI/ML Expertise</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#entreprenuership"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Entreprenuership</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#training"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">ML Training</span></a></li>
-                              <li><a class="group flex items-center py-3" href="#community"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">Community</span></a></li>
-                           </ul>
-                        </nav>
-                     </div>
-                     <div>
-                        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                           <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                              <a href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
-                           </span>
-                        </button>
-                     </div>
-                     <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
-                        <li class="mr-5 shrink-0 text-xs">
-                           <a class="block hover:text-slate-200" href="https://github.com/srniranjan" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)" title="GitHub">
-                              <span class="sr-only">GitHub</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-                                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                              </svg>
-                           </a>
-                        </li>
-                        <li class="mr-5 shrink-0 text-xs">
-                           <a class="block hover:text-slate-200" href="https://www.linkedin.com/in/niranjan-salimath-92a19612/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
-                              <span class="sr-only">LinkedIn</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
-                                 <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
-                              </svg>
-                           </a>
-                        </li>
-                        <li class="mr-5 shrink-0 text-xs">
-                           <a class="block hover:text-slate-200" href="https://www.youtube.com/srniranjan" target="_blank" rel="noreferrer noopener" aria-label="CodePen (opens in a new tab)" title="CodePen">
-                              <span class="sr-only">YouTube</span>
-                              <svg viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier"> 
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5949 4.45999C21.5421 4.71353 22.2865 5.45785 22.54 6.40501C22.9982 8.12001 23 11.7004 23 11.7004C23 11.7004 23 15.2807 22.54 16.9957C22.2865 17.9429 21.5421 18.6872 20.5949 18.9407C18.88 19.4007 12 19.4007 12 19.4007C12 19.4007 5.12001 19.4007 3.405 18.9407C2.45785 18.6872 1.71353 17.9429 1.45999 16.9957C1 15.2807 1 11.7004 1 11.7004C1 11.7004 1 8.12001 1.45999 6.40501C1.71353 5.45785 2.45785 4.71353 3.405 4.45999C5.12001 4 12 4 12 4C12 4 18.88 4 20.5949 4.45999ZM15.5134 11.7007L9.79788 15.0003V8.40101L15.5134 11.7007Z" stroke="#000000" stroke-linejoin="round"></path>
-                                </g>
-                              </svg>
-                           </a>
-                        </li>
-                     </ul>
-                  </header>
-                  <main id="content" class="pt-24 lg:w-[52%] lg:py-24">
-                     <section id="about" class="scroll-mt-16 lg:scroll-mt-24" aria-label="About me">
-                        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
-                        </div>
-                        <div class="text-slate-200">
-                           <p class="mt-4 mb-4 text-slate-400">"The beginning of wisdom is the definition of terms." — Socrates</p>
-                           <p class="mb-4">This principle has shaped everything I do.</p>
-                           <p class="mb-4">
-                              Whether it's building AI/ML systems, navigating the chaos of early-stage startups, or perfecting a dish in the kitchen, I always break things down to their core and build up from first principles.
-                           </p>
-                           <p class="mb-4">
-                              I'm Niranjan Salimath—welcome to my corner of the cosmos.
-                           </p>
-                           <p class="mb-4">
-                              Over the past 20 years, I've spent most of my career building startups, often in a CTO capacity. Since earning my Master's from Carnegie Mellon (CMU) in 2009, I've specialized in AI/ML, working on everything from foundational models to cutting-edge applications.
-                           </p>
-                           <p class="mb-4">
-                              Beyond engineering, I'm passionate about teaching. I run a unique math club for software engineers, helping them develop a strong mathematical foundation for AI/ML.
-                           </p>
-                           <p class="mb-4">
-                              Outside of work, I'm all about food—cooking, exploring cuisines, and traveling across continents to experience flavors firsthand. And to navigate the constant flux and challenges of both work and life, yoga keeps me centered—helping me adapt, refocus, and stay grounded.
-                           </p>
-                        </div>
-                     </section>
-                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                     <section id="engineering" class="scroll-mt-16 lg:scroll-mt-24" aria-label="engineering">
-                        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">AI/ML and Engineering</h2>
-                        </div>
-                        <div class="text-slate-200">
-                           <p class="mb-4">I have been working in AI/ML since my master's at Carnegie Mellon University in 2009, gaining deep expertise in building intelligent systems. Over the years, I’ve led teams and built products across a wide range of AI/ML applications—from social credit scoring using social media data to leveraging GenAI and LLMs for video creation.</p>
-                           <p class="mb-4">My approach to AI/ML is rooted in first principles thinking. I encourage my teams to break down complex problems into their fundamental components, ensuring we apply the right level of complexity. Rather than blindly chasing the latest trends, I focus on making strategic decisions that balance innovation with practicality. Often, the best solutions don’t require cutting-edge models—leveraging simple statistical methods and fundamental linear algebra can get us surprisingly close while keeping systems efficient, interpretable, and scalable.</p>
-                           <p class="mb-4">I have hired, scaled, and led high-performing ML and engineering teams, ensuring they have the right mix of research depth and production pragmatism. From designing ML infrastructure and data pipelines to deploying models at scale, I drive both technical execution and strategic decision-making. My focus is always on delivering AI/ML solutions that are not just innovative but also practical, cost-effective, and aligned with business goals.</p>
-                           <p class="mb-4">Following are some AI/ML products I have built:</p>
-                        </div>
-                        <div>
-                           <ol class="group/list">
-                              <li class="mb-12">
-                                 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Jan 2022 — Present</header>
-                                    <div class="z-10 sm:col-span-6">
-                                       <h3 class="font-medium leading-snug text-slate-200">
-                                          <div>
-                                             <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                                <span>
-                                                   Engineering Lead · Augie Studio
-                                                </span>
-                                             </div>
-                                          </div>
-                                       </h3>
-                                       <p class="mt-2 text-sm leading-normal">At Augie Studio, I led the development of an AI-driven video creation platform using cutting-edge GenAI and LLM technologies. We built features like script generation, auto-storyboarding, and voice synthesis with LLMs, while diffusion models and custom-trained Hugging Face models powered media generation and search.</p>
-                                       <p class="mt-2 text-sm leading-normal">Beyond building the tech, I scaled and led the engineering team, leveraging my network to hire top-tier talent in India. I implemented best practices in hiring, mentoring, and execution, ensuring rapid development in a fast-paced startup environment. </p>
-                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">GenAI</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Large Language Models (LLM)</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">NestJS</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Amazon Web Services (AWS)</div>
-                                         </li>
-                                        <li class="mr-1.5 mt-2">
-                                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
-                                        </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Dec 2021 - Jan 2023</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                Independent Consultant · American Red Cross
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">Worked with ARC to enhance and develop NLP-driven chatbots for their marketing initiatives. Took ownership of a legacy conversational AI system, leading a complete re-architecture to improve its scalability, performance, and robustness. Designed a comprehensive test harness to ensure consistent intent recognition and response accuracy. Leveraged state-of-the-art NLP techniques, including contextual embeddings, and entity recognition, to enhance response generation and improve dialogue coherence. Additionally, integrated the chatbot with external APIs and enterprise systems, significantly enhancing its usability, automation capabilities, and overall efficiency.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Natural Language Processing (NLP)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Chatbot Development</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Microsoft Bot Framework</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Microsoft Azure</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AngularJS</div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
-                                        </li>
-                                       <li class="mr-1.5 mt-2">
-                                         <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Test Harness</div>
-                                       </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Sep 2014 - Jul 2019</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener" aria-label="Chief Technology Officer, Pirates (opens in a new tab)">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                Chief Technology Officer · Pirates
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">Pirates was a B2B platform designed to bridge the gap between early-stage product startups and enterprise software projects, enabling startups to generate revenue independently of investor funding while giving enterprises access to agile, high-caliber startup talent. As part of this initiative, we closely collaborated with Google's ML ecosystem, deploying AI-driven solutions for several major organizations. Our work involved leveraging Google Cloud AI, and TensorFlow to develop scalable, production-ready machine learning applications. The platform's impact and innovation earned us the opportunity to present at Google Cloud Next 2017, highlighting our contributions to the enterprise AI landscape.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">TensorFlow</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Kubernetes</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React.js</div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                           <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
-                                        </li>
-                                       <li class="mr-1.5 mt-2">
-                                         <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
-                                       </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                              <li class="mb-12">
-                                <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                   <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                   <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Aug 2012 - Dec 2014</header>
-                                   <div class="z-10 sm:col-span-6">
-                                      <h3 class="font-medium leading-snug text-slate-200">
-                                         <div>
-                                            <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                               <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                               <span>
-                                                  Co-founder and CTO · Haggle
-                                               </span>
-                                             </div>
-                                         </div>
-                                      </h3>
-                                      <p class="mt-2 text-sm leading-normal">Haggle was built to harness social data and network effects to optimize discount negotiations. I applied machine learning and statistical modeling to analyze user behavior, predict engagement, and refine discount recommendations. The platform processed large-scale social data, leveraging predictive analytics and optimization techniques to enhance vendor-user interactions. Additionally, I developed ML-driven ranking algorithms to surface the most relevant restaurants and implemented A/B testing frameworks to measure user response. These data-driven approaches helped scale Haggle to 300 vendors and 1,000 daily active users at its peak.</p>
-                                      <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Analytics</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Data Mining</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Data Visualization</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Swift (Programming Language)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Objective-C</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python (Programming Language)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
-                                         </li>
-                                      </ul>
-                                   </div>
-                                </div>
-                              </li>
-                           </ol>
-                        </div>
-                     </section>
-                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                     <section id="entreprenuership" class="scroll-mt-16 lg:scroll-mt-24" aria-label="Software Services">
-                        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Services</h2>
-                        </div>
-                        <div class="text-slate-200">
-                          <p class="mb-4">Over the years in my career, I have built and scaled multiple startups, taking ideas from concept to execution. As a serial entrepreneur, I have led product development, assembled and managed high-performing teams, and navigated the complexities of early-stage growth. I approach challenges with first-principles thinking, ensuring that solutions are both innovative and practical. My experience spans AI/ML, engineering, and offshore team building, allowing startups to operate efficiently while staying ahead of the curve. From launching new products to optimizing operations, I thrive in the fast-paced, ever-evolving startup landscape.</p>
-                          <p class="mb-4">Startups I am most proud of:</p>
-                           <ul class="group/list">
-                              <li class="mb-12">
-                                 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Sep 2014 - Jul 2019</header>
-                                    <div class="z-10 sm:col-span-6">
-                                       <h3 class="font-medium leading-snug text-slate-200">
-                                          <div>
-                                             <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener" aria-label="Chief Technology Officer, Pirates (opens in a new tab)">
-                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                                <span>
-                                                 Chief Technology Officer · Pirates
-                                                </span>
-                                              </div>
-                                          </div>
-                                       </h3>
-                                       <p class="mt-2 text-sm leading-normal">Pirates was a platform designed to connect small product startups with software projects from established enterprises, enabling startups to generate revenue without relying on investor funding while providing enterprises access to agile talent in smaller startups. Through this venture, we collaborated closely with Google’s ML offerings, delivering AI solutions to several major organizations. Our innovative work earned us the opportunity to present at Google Cloud Next 2017, showcasing the impact of our platform.</p>
-                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">TensorFlow</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Kubernetes</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React.js</div>
-                                         </li>
-                                         <li class="mr-1.5 mt-2">
-                                            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div>
-                                         </li>
-                                        <li class="mr-1.5 mt-2">
-                                          <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
-                                        </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                               </li>
-                              <li class="mb-12">
-                                 <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2" aria-label="2024 to Present">Aug 2012 - Dec 2014</header>
-                                    <div class="z-10 sm:col-span-6">
-                                       <h3 class="font-medium leading-snug text-slate-200">
-                                          <div>
-                                             <div class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                                <span>
-                                                   Co-founder and CTO · Haggle
-                                                </span>
-                                              </div>
-                                          </div>
-                                       </h3>
-                                       <p class="mt-2 text-sm leading-normal">Haggle was my first startup venture, designed to empower users to leverage their social data to "haggle" for discounts. At its peak, the platform hosted 300 registered vendors and achieved around 1,000 daily active users. As a co-founder and CTO, I applied my software development expertise along with analytics, ML, and statistics skills from my master’s program. Beyond technical contributions, I took on diverse responsibilities, including building and managing teams, overseeing offshore software development, engaging with investors, and taking full ownership of the product lifecycle.</p>
-                                       <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">AI/ML</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Analytics</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Data Mining</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Data Visualization</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Swift (Programming Language)</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Objective-C</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python (Programming Language)</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Google Cloud Platform (GCP)</div>
-                                          </li>
-                                          <li class="mr-1.5 mt-2">
-                                             <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Offshore Outsourcing</div>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </li>
-                           </ul>
-                        </div>
-                     </section>
-                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                     <section id="training" class="scroll-mt-16 lg:scroll-mt-24" aria-label="Software Services">
-                        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">ML Training</h2>
-                        </div>
-                        <div class="text-slate-200">
-                          <p class="mb-4">Many software engineers struggle to transition into data science and ML, despite their strong programming backgrounds. The barrier isn't just math—it's the way it's presented. Most of the core mathematical concepts behind ML, like linear algebra and calculus, were already covered in high school, but they were never taught with real-world applications in mind.</p>
-                          <p class="mb-4">My training program bridges this gap by helping engineers revisit and apply the math they already know, rather than overwhelming them with theory. More importantly, I emphasize first-principles thinking, giving them the confidence to break down complex ML concepts, go deep when needed, and learn new mathematical tools as the problem demands. By focusing on intuitive understanding and hands-on problem-solving, the program equips engineers with the foundational skills needed to navigate an AI-first world—not just as users of ML tools, but as creators who truly understand how they work.</p>
-                          <p class="mb-4">
-                              <span>Structured in three parts, this training systematically builds toward a deep, intuitive grasp of transformer architecture—an essential skill in today's AI-first world.</span>
-                              <span><a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sign up to stay updated on the launch,</a></span> 
-                              <span>and here's a sneak peek of what to expect!</span>
-                           </p>
-                          <ul class="group/list">
-                              <li class="mb-12">
-                                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <div class="z-10 sm:order-2 sm:col-span-6">
-                                       <h3>
-                                          <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                             <span>
-                                                Module 1: Developing the Right Mindset for Modeling ML Problems
-                                             </span>
-                                          </a>
-                                       </h3>
-                                       <p class="mt-2 text-sm leading-normal">This module focuses on developing the foundational mindset needed to approach ML problems effectively. Unlike traditional coding, ML requires understanding how to represent problems mathematically. If we don't grasp what vectors model our problem, which space they exist in, what solution space we're aiming for, and how to transition between them, we're merely feeding numbers into an API and hoping for the best—akin to the infinite mokey theorem.</p>
-                                       <p class="mt-2 text-sm leading-normal">Here, we revisit the linear algebra we've already learned and build upon it, mastering concepts like vector spaces, matrix decomposition, projections, and norms. More importantly, we apply these "lego blocks" to real ML problems, learning not just the theory but how to wield these tools effectively in practical scenarios.</p>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="mb-12">
-                                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <div class="z-10 sm:order-2 sm:col-span-6">
-                                       <h3>
-                                          <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                             <span>
-                                                Module 2: Deconstructing Neural Networks to Build Intuition
-                                             </span>
-                                          </a>
-                                       </h3>
-                                       <p class="mt-2 text-sm leading-normal">Neural networks aren't magic—they're just math! This course demystifies how they work, building on your linear algebra foundation to give you a deep, hands-on understanding. You'll break down core concepts like linear regression, activation functions, and statistical learning while mastering the calculus behind backpropagation—the key to how neural networks actually learn. By the end, you won't just be following tutorials or tweaking hyperparameters blindly; you'll have the confidence to build, optimize, and truly understand neural networks, making you a far more effective AI/ML practitioner.</p>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="mb-12">
-                                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                    <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                    <div class="z-10 sm:order-2 sm:col-span-6">
-                                       <h3>
-                                          <a class="inline-flex items-baseline font-medium leading-tight text-teal-300 focus-visible:text-teal-300  group/link text-base" href="_" target="_blank" rel="noreferrer noopener">
-                                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                             <span>
-                                                Module 3: Attention is All You Need
-                                             </span>
-                                          </a>
-                                       </h3>
-                                       <p class="mt-2 text-sm leading-normal">LLMs are everywhere right now, but don't stress—they need not replace you. Instead, this course empowers you to take control and use them to your advantage. Building on the concepts from the previous courses, we'll dive deep into the transformer architecture and break down the groundbreaking "Attention is All You Need" paper to understand how LLMs tick. By the end, you'll not only build your own custom GPT but also have an under-the-hood understanding of LLMs, the skills to deploy them locally and distill them for your own use cases. This is the ultimate re-skilling every software engineer needs to thrive in today's LLM-powered world.</p>
-                                    </div>
-                                 </div>
-                              </li>
-                           </ul>
-                        </div>
-                     </section>
-                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                     <section id="community" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                           <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Community</h2>
-                        </div>
-                        <div class="text-slate-200">
-                          <p class="mb-4">Community has always been at the heart of everything I do. I firmly believe that the best ideas emerge in environments where people can exchange knowledge, challenge each other, and build together. This belief led me to create BeaglesLoft, a collaborative space that I ran for six years, where entrepreneurs, technologists, and creatives came together to share ideas, experiment, and push the boundaries of innovation. It became a hub for meaningful discussions, hands-on learning, and startup incubation, reinforcing my conviction that a strong community accelerates both individual and collective growth.</p>
-                          <p class="mb-4">In addition to fostering startup communities, I have also been running a math club for the past seven years, helping software engineers strengthen their understanding of AI/ML fundamentals. Many developers struggle with the mathematical foundations of ML, and I’ve found that learning in a collaborative setting makes the process more intuitive and engaging. Whether in startups, technology, or education, I have seen firsthand how the right community can empower people to solve complex problems and achieve more than they could alone.</p>
-                          <p class="mb-4">These communities have also been instrumental in my own journey. Be it quick hiring, seeking advice from seasoned entrepreneurs, or staying plugged into the startup and developer ecosystem, I have consistently relied on these networks. They have given me access to exceptional talent, helped me navigate tough decisions, and ensured that I stay at the cutting edge of technology and business.</p>
-                        </div>
-                     </section>
-                  </main>
+      .brand .column p {
+         color: var(--highlight)
+      }
+
+      @media screen and (min-width: 769px) {
+         .brand .column:first-child {
+            border-right: 1px solid var(--border);
+         }
+
+         .brand .column:last-child {
+            border-left: 1px solid var(--border);
+         }
+
+         .brand .box {
+            margin-right: 20px;
+            margin-left: 20px;
+         }
+      }
+
+      @media screen and (max-width: 768px) {
+         .brand .column:first-child {
+            border-bottom: 1px solid var(--border);
+         }
+
+         .brand .column:last-child {
+            border-top: 1px solid var(--border);
+         }
+
+         .brand .box {
+            margin-right: 20px;
+            margin-left: 20px;
+         }
+      }
+
+      figure {
+         width: 250px;
+      }
+
+      nav {
+         padding: 1.2rem 1.2rem;
+      }
+
+      h2.title {
+         line-height: 1.5;
+      }
+
+      body {
+         background-color: var(--background);
+      }
+
+      .title {
+         color: var(--highlight) !important;
+      }
+
+      p {
+         color: var(--highlight) !important;
+      }
+
+      .cta {
+         border-color: var(--cta) !important;
+         color: var(--cta) !important;
+      }
+
+      .fa-stack i:first-child {
+         color: var(--background);
+      }
+
+      .fa-stack i:last-child {
+         color: var(--highlight);
+      }
+
+      .brand .column {
+         color: var(--brand-text);
+      }
+
+      .footer {
+         --bulma-footer-padding: 3rem 1.5rem 3rem;
+      }
+
+      .is-link {
+         color: #000000;
+         text-decoration: underline;
+      }
+
+      .brand .box {
+         border-radius: 12px;
+         background-color: var(--brand);
+      }
+
+      .brand .columns {
+         margin: 0px;
+      }
+
+      .navbar-burger span {
+         background-color: var(--highlight);
+      }
+
+      .navbar-end .navbar-item:not(:last-child) {
+         margin-right: 10px;
+         color: var(--highlight);
+      }
+   </style>
+</head>
+
+<body>
+   <nav class="navbar has-background-inherit" role="navigation">
+      <div class="navbar-brand">
+         <a class="navbar-burger" role="button" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+         </a>
+      </div>
+      <div class="navbar-menu is-shadowless has-background-inherit" id="navMenu">
+         <div class="navbar-start"></div>
+         <div class="navbar-end">
+            <a class="button is-ghost navbar-item" target="_blank" href="https://www.youtube.com/srniranjan"><i
+                  class="fa fa-2x fa-brands fa-youtube"></i></a>
+            <a class="button is-ghost navbar-item" target="_blank"
+               href="https://www.linkedin.com/in/niranjan-salimath-92a19612"><i
+                  class="fa fa-2x fa-brands fa-linkedin"></i></a>
+            <a class="button is-outlined cta is-responsive is-medium is-rounded navbar-item" target="_blank"
+               href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
+         </div>
+      </div>
+   </nav>
+   <section class="hero has-text-centered">
+      <div class="hero-body">
+         <div class="container">
+            <div class="columns is-centered">
+               <div class="column is-three-fifths">
+                  <h1 class="title is-1">Niranjan Salimath</h1>
+                  <div class="box has-background-inherit is-shadowless">
+                     <figure class="image is-inline-block">
+                        <img src="24X4omO01.png" />
+                     </figure>
+                  </div>
+                  <h2 class="title is-5 has-text-weight-normal">I'm a serial entrepreneur, AI/ML expert, and community
+                     builder with a passion for first-principles thinking. With over 20 years of experience, I've built
+                     and led engineering teams, developed cutting-edge AI solutions, and helped startups scale. I also
+                     create hands-on training to make machine learning clear and intuitive for software engineers.</h2>
                </div>
             </div>
          </div>
       </div>
-   </body>
+   </section>
+   <section class="brand has-text-centered">
+      <div class="container is-narrow">
+         <div class="box p-0">
+            <div class="columns brand is-centered">
+               <div class="column" id="startups">
+                  <div class="block">
+                     <span class="fa fa-stack fa-2x my-2">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-thin fa-shuttle-space fa-stack-1x"></i>
+                     </span>
+                     <h1 class="has-text-weight-bold is-size-4 is-spaced">Startups</h1>
+                  </div>
+                  <h2 class="has-text-weight-normal is-size-6 is-spaced block">I've co-founded, built and scaled
+                     multiple startups, driving engineering and product while navigating the chaos of startup growth.
+                  </h2>
+                  <div class="block">
+                     <p class="has-text-weight-bold mb-2">Case studies on some startups I have built:</p>
+                     <ul class="list">
+                        <li><a class="is-link" href="/augie-casestudy.html">AI Assisted Video Creation</a></li>
+                        <li><a class="is-link" href="/haggle-casestudy.html">Pricing Engine for Mobile Commerce</a></li>
+                        <li><a class="is-link" href="/yellow-casestudy.html">Digital Succession Planning</a></li>
+                     </ul>
+                  </div>
+                  <div class="block">
+                     <p class="has-text-weight-bold mb-2">Technologies I enjoy working with:</p>
+                     <ul>
+                        <li>JS frameworks like React and Node</li>
+                        <li>Slicing and data using Pandas</li>
+                        <li>Tensorflow and numpy</li>
+                        <li>Scaling backends using AWS technologies</li>
+                        <li>Mobile app development using Flutter and Swift</li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="column" id="aiml">
+                  <div class="block">
+                     <span class="fa fa-stack fa-2x my-2">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-thin fa-square-root-variable fa-stack-1x"></i>
+                     </span>
+                     <h1 class="has-text-weight-bold is-size-4 is-spaced">AI / ML</h1>
+                  </div>
+                  <h2 class="has-text-weight-normal is-size-6 is-spaced block">I have been working in AI/ML since my
+                     master's at CMU in 2009, gaining deep expertise in building intelligent systems. I encourage my
+                     teams to break down complex problems into their fundamental components, ensuring we apply the right
+                     level of complexity.</h2>
+                  <div class="block">
+                     <p class="has-text-weight-bold mb-2">Areas of ML I have worked on:</p>
+                     <ul class="list">
+                        <li>Data Engineering & Preprocessing</li>
+                        <li>Feature Engineering</li>
+                        <li>Model Development & Training</li>
+                        <li>Deployment & MLOps</li>
+                     </ul>
+                  </div>
+                  <div class="block">
+                     <p class="has-text-weight-bold mb-2">Deep dives into some of my ML work:</p>
+                     <ul>
+                        <li><a class="is-link" href="/haggle-casestudy.html">Pricing engine for mobile commerce</a></li>
+                        <li><a class="is-link" href="/larson-casestudy.html">Customer service based on legacy data</a>
+                        </li>
+                        <li><a class="is-link" href="/augie-casestudy.html">AI Video editing</a></li>
+                        <li><a class="is-link">Optimising job scheduling using OR-Tools</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="column" id="teaching">
+                  <div class="block">
+                     <span class="fa fa-stack fa-2x my-2">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-thin fa-chalkboard-user fa-stack-1x"></i>
+                     </span>
+                     <h1 class="has-text-weight-bold is-size-4 is-spaced">Teaching</h1>
+                  </div>
+                  <h2 class="has-text-weight-normal is-size-6 is-spaced block">I help engineers reconnect with the math
+                     they already know, building the foundational skills needed to thrive in an AI-first world—not just
+                     as users of ML tools, but as creators who deeply understand their mechanics.</h2>
+                  <div class="block">
+                     <p class="has-text-weight-bold mb-2">Some of my previous trainings:</p>
+                     <ul class="list">
+                        <li><a class="is-link" href="https://www.facebook.com/beaglesloft/photos">In person classes</a>
+                        </li>
+                        <li><a class="is-link" href="https://www.youtube.com/srniranjan">Training videos</a></li>
+                     </ul>
+                  </div>
+                  <div class="block">
+                     <p class="has-text-weight-bold mb-2">Courses I currently offer:</p>
+                     <ul>
+                        <li><a class="is-link">Developing the right mindset for modeling ML problems</a></li>
+                        <li><a class="is-link">Deconstructing neural networks to build intuition</a></li>
+                        <li><a class="is-link">Attention is all you need</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <footer class="footer has-background-inherit">
+      <div class="content has-text-centered">
+         <div class="columns is-centered">
+            <div class="column is-four-fifths">
+               <div class="box is-rounded has-background-inherit" style="border: 1px solid var(--highlight)">
+                  <div class="columns is-vcentered">
+                     <div class="column">
+                        <h1 class="title is-size-3 m-0">Collaborate?</h1>
+                     </div>
+                     <div class="column">
+                        <p>Like what you read and want to work together? I would love to hear from you</p>
+                     </div>
+                     <div class="column">
+                        <a class="button cta is-responsive is-medium is-outlined is-rounded" target="_blank"
+                           href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+         $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+               const target = el.dataset.target;
+               const $target = document.getElementById(target);
+               el.classList.toggle('is-active');
+               $target.classList.toggle('is-active');
+
+            });
+         });
+      });
+   </script>
+</body>
+
 </html>

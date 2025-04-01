@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Niranjan Salimath</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/b0930ecf30.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --background: #FFFDF2;
+            --cta: #00b4d8;
+            --border: #FFFFFF;
+            --highlight: #023e8a;
+            --brand: #0096c7;
+            --brand-text: #FFFFFF;
+        }
+
+        .navbar {
+            padding: 1.2rem 0;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--highlight);
+        }
+
+        body .title {
+            color: var(--highlight);
+        }
+
+        .hero figure {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta {
+            border-color: var(--cta) !important;
+            color: var(--cta) !important;
+        }
+
+        .footer {
+            --bulma-footer-padding: 3rem 1.5rem 3rem;
+        }
+
+        .footer p {
+            color: var(--highlight);
+        }
+
+        li span {
+            font-weight: 700 !important;
+        }
+
+        .main-section {
+            padding-top: 3rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .hero {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        h2.subtitle {
+            font-size: 1.25rem;
+            color: var(--highlight);
+        }
+
+        .content h3 {
+            font-size: 1.15rem;
+            color: var(--highlight);
+        }
+
+        .image img {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar has-background-inherit" role="navigation">
+        <div class="content">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/"><i class="fa fa-thin fa-house fa-2x"></i></a>
+            </div>
+        </div>
+    </nav>
+    <section class="hero has-text-centered">
+        <div class="columns is-centered">
+            <div class="column">
+                <h1 class="title">Case Study: Transforming Yellow – Digitizing Succession Planning in India</h1>
+            </div>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Introduction</h1>
+            <p>Yellow set out to tackle one of India’s most pressing yet overlooked problems: succession planning. With
+                billions of dollars lying unclaimed and countless families navigating a system riddled with
+                inefficiencies and corruption, Yellow aimed to provide a seamless, digital-first solution for users to
+                create a living will. However, before my arrival as CTO, the startup was struggling—burning money on an
+                external software agency that failed to deliver a robust product.</p>
+            <p>In just 6–8 months, I built an in-house engineering team, inherited a subpar codebase, re-architected the
+                entire tech stack, and successfully launched a Flutter-based mobile app along with a fully functional
+                web app. This case study details how we executed this turnaround.</p>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">The Challenge: A Dysfunctional Development Process</h1>
+            <p>Before I joined, Yellow relied on an outsourced software agency that failed to deliver a scalable,
+                maintainable product. Key challenges included:</p>
+            <ul>
+                <li><span>Poor Code Quality:</span> The Flutter app had been built with an inconsistent architecture,
+                    leading to frequent crashes and performance bottlenecks.</li>
+                <li><span>Backend Scalability Issues: </span>The Node.js backend was monolithic, poorly structured, and
+                    lacked proper security and efficiency optimizations.</li>
+                <li><span>Frontend Limitations:</span> The React-based web app was fragmented, with a lack of reusable
+                    components and proper state management.</li>
+                <li><span>High Burn, Low Output:</span> Despite significant investments, the agency's deliverables were
+                    slow, unoptimized, and required constant rework.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">The Turnaround: Building an In-House Team & Re-Architecting the Stack</h1>
+            <h2 class="subtitle">Step 1: Assembling a Lean Engineering Team</h2>
+            <p>I hired a small team of young, highly motivated engineers who were eager to build something meaningful.
+                By bringing development in-house, we reduced dependencies on third-party vendors and gained full control
+                over the technology.</p>
+            <h2 class="subtitle">Step 2: Rebuilding the Flutter App</h2>
+            <p>One of the first tasks was to overhaul the Flutter app. The previous implementation had fragmented state
+                management, redundant widgets, and inefficient API handling.</p>
+            <h3>Key Improvements:</h3>
+            <ul>
+                <li><span>Adopted a Clean Architecture:</span> Implemented a layered architecture following Flutter's
+                    best practices (Presentation, Domain, Data layers) to improve scalability.
+                </li>
+                <li><span>State Management Overhaul:</span> Moved to Riverpod for efficient state management, reducing
+                    unnecessary rebuilds and improving performance.</li>
+                <li><span>Optimized API Calls: </span>Implemented caching mechanisms and batch API requests to reduce
+                    latency.
+                </li>
+                <li><span>Security Enhancements: </span> Integrated secure authentication and encrypted local storage to
+                    protect sensitive user data.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Step 3: Revamping the Node.js Backend</h1>
+            <p>The inherited Node.js backend was inefficient, making data retrieval slow and resource-intensive. We
+                restructured it into a modular, scalable system.</p>
+            <h2 class="subtitle">Key Improvements:</h2>
+            <ul>
+                <li><span>Microservices Architecture: </span>Broke the monolithic backend into independent, scalable
+                    services.
+                </li>
+                <li><span>Database Optimization: </span>Implemented indexing and query optimization for faster
+                    retrieval.</li>
+                <li><span>Security Enhancements: </span>Integrated OAuth, JWT authentication, and rate limiting to
+                    safeguard user data.</li>
+                <li><span>Automated Deployment: </span>Introduced CI/CD pipelines for faster and more reliable releases.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Step 4: Refining the React Web App</h1>
+            <p>The web platform had a disorganized codebase, making it hard to maintain and extend. We revamped it with
+                a focus on performance and user experience.</p>
+            <h2 class="subtitle">Key Improvements:</h2>
+            <ul>
+                <li><span>Component-Driven Architecture: </span>Refactored UI into reusable React components for
+                    consistency and maintainability.</li>
+                <li><span>Optimized State Management: </span>Switched from prop-drilling to Redux Toolkit for more
+                    predictable state handling.</li>
+                <li><span>Responsive Design: </span>Ensured a seamless experience across devices using TailwindCSS and
+                    Material UI.</li>
+                <li><span>Accessibility & Performance: </span>Implemented lazy loading, server-side rendering, and
+                    Lighthouse audits to improve loading speed and SEO.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">The Result: A Successful Launch in Record Time</h1>
+            <p>Thanks to the architectural improvements and efficient execution, we successfully launched a robust
+                mobile app and web platform within 6–8 months. The impact was immediate:</p>
+            <ul>
+                <li><span>Significant Cost Savings: </span>Eliminating reliance on the external agency reduced
+                    operational costs drastically.</li>
+                <li><span>Improved Performance: </span>App crash rates dropped by over 70%, and API response times
+                    improved by 50%.</li>
+                <li><span>User Adoption: </span>Post-launch, we saw a steady increase in user registrations and positive
+                    feedback from early adopters.</li>
+                <li><span>Scalability Achieved: </span>The platform was now built to handle future growth without major
+                    rework.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Conclusion</h1>
+            <p>By taking over Yellow’s technical leadership, I turned around a struggling development process, built a
+                high-performing in-house team, and delivered a market-ready solution in under eight months. The
+                experience reinforced the importance of hands-on leadership, clean architecture, and rapid execution in
+                scaling an early-stage startup. Yellow is now well-positioned to disrupt succession planning in India
+                with a digital-first approach.</p>
+        </div>
+    </section>
+    <footer class="footer has-background-inherit">
+        <div class="content has-text-centered">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <div class="box is-rounded has-background-inherit" style="border: 1px solid var(--highlight)">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <h1 class="title is-size-3 m-0">Collaborate?</h1>
+                            </div>
+                            <div class="column">
+                                <p>Like what you read and want to work together? I would love to hear from you</p>
+                            </div>
+                            <div class="column">
+                                <a class="button cta is-responsive is-medium is-outlined is-rounded" target="_blank"
+                                    href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
