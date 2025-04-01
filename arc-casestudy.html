@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Niranjan Salimath</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/b0930ecf30.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --background: #FFFDF2;
+            --cta: #00b4d8;
+            --border: #FFFFFF;
+            --highlight: #023e8a;
+            --brand: #0096c7;
+            --brand-text: #FFFFFF;
+        }
+
+        .navbar {
+            padding: 1.2rem 0;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--highlight);
+        }
+
+        body .title {
+            color: var(--highlight);
+        }
+
+        .hero figure {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta {
+            border-color: var(--cta) !important;
+            color: var(--cta) !important;
+        }
+
+        .footer {
+            --bulma-footer-padding: 3rem 1.5rem 3rem;
+        }
+
+        .footer p {
+            color: var(--highlight);
+        }
+
+        li span {
+            font-weight: 700 !important;
+        }
+
+        .main-section {
+            padding-top: 3rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .hero {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        h2.subtitle {
+            font-size: 1.25rem;
+            color: var(--highlight);
+        }
+
+        .image img {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar has-background-inherit" role="navigation">
+        <div class="content">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/"><i class="fa fa-thin fa-house fa-2x"></i></a>
+            </div>
+        </div>
+    </nav>
+    <section class="hero has-text-centered">
+        <div class="columns is-centered">
+            <div class="column">
+                <figure class="image is-inline-block">
+                    <img src="augie-screenshot.png" />
+                </figure>
+                <h1 class="title">Case Study: Re-Architecting the American Red Cross Chatbot</h1>
+            </div>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Introduction</h1>
+            <p>The American Red Cross was facing significant challenges with their chatbot system, which was plagued by
+                performance issues, security vulnerabilities, and architectural inefficiencies. Their existing vendor
+                was unable to deliver a satisfactory solution, and the strained relationship had left them in a
+                difficult position. As an independent contractor, I was brought in to take over the project, form a new
+                team, and completely re-architect the chatbot to improve usability, security, and performance.</p>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">The Challenge</h1>
+            <ol>
+                <li><span>Non-Performant Chatbot:</span> The chatbot was slow, unreliable, and unable to handle complex
+                    interactions effectively.</li>
+                <li><span>Security Vulnerabilities:</span> There were major concerns about how the chatbot interfaced
+                    with third-party systems like ServiceNow.</li>
+                <li><span>Unusable Frontend:</span> The chatbot's front-end implementation in Angular was poorly
+                    structured, making it difficult to maintain and use.</li>
+                <li><span>Vendor Relationship Breakdown:</span> The previous vendor was unable to deliver results, and
+                    the organization needed a rapid intervention.</li>
+            </ol>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Solution Approach</h1>
+            <h2 class="subtitle">Building a New Team & Re-Architecting the Chatbot</h2>
+            <p>Recognizing the critical nature of the project, I assembled a small but highly skilled team to take over
+                development. We focused on the following key improvements:</p>
+            <ul>
+                <li><span>Rewriting the Frontend in Angular:</span> The previous implementation of Angular was
+                    unmaintainable and poorly structured. We rewrote the chatbot's frontend to leverage Angular's
+                    component-based architecture, improving performance and usability.</li>
+                <li><span>Leveraging Microsoft Bot Framework:</span> Instead of building everything from scratch, we
+                    utilized Microsoft Bot Framework's built-in capabilities, which provided:
+                    <ul>
+                        <li>Natural Language Understanding (NLU)</li>
+                        <li>Dialog and state management</li>
+                        <li>Seamless integration with Azure, which the Red Cross already used</li>
+                    </ul>
+                </li>
+                <li><span>Implementing Turn-Based NLP for Chatbot Conversations:</span> A major rework was needed to
+                    ensure the chatbot could handle multi-turn conversations effectively.</li>
+            </ul>
+            <h2 class="subtitle">Advanced NLP for Turn-Based Chatbot Implementation</h2>
+            <p>The chatbot needed to handle complex interactions where users could ask follow-up questions or switch
+                topics mid-conversation. To achieve this, we implemented:</p>
+            <ol>
+                <li><span>Intent Recognition:</span> Used pre-trained models and fine-tuned them for the Red Cross’s use
+                    cases, ensuring accurate intent detection.</li>
+                <li><span>Turn-Based Context Management:</span>
+                    <ul>
+                        <li>Implemented a stateful dialogue manager to track ongoing conversations.</li>
+                        <li>Used slot filling techniques to collect necessary information from users dynamically.</li>
+                    </ul>
+                </li>
+                <li><span>Disambiguation Handling:</span> Created a fallback mechanism where the chatbot could clarify
+                    ambiguous user inputs before proceeding.</li>
+                <li><span>Memory Persistence:</span> Implemented session-based and long-term memory so the chatbot could
+                    recall previous interactions and provide more personalized responses.</li>
+            </ol>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Enhancing Security for Third-Party Integrations</h1>
+            <p>The chatbot needed to interface securely with external systems, especially ServiceNow, which handled
+                critical requests. We implemented:</p>
+            <ul>
+                <li><span>OAuth 2.0 Authentication: </span>Ensured secure API calls by implementing token-based
+                    authentication.</li>
+                <li><span>Role-Based Access Control (RBAC): </span>Restricted chatbot access based on user roles to
+                    prevent unauthorized access to sensitive data.</li>
+                <li><span>Data Encryption: </span>Used AES-256 encryption for sensitive data transmitted between the
+                    chatbot and external systems.</li>
+                <li><span>Azure Security Features: </span>Leveraged Azure's security controls, including API gateways,
+                    threat detection, and logging mechanisms.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Results & Impact</h1>
+            <ol>
+                <li><span>Improved Performance: </span>
+                    <ul>
+                        <li>The chatbot response time improved by 60%, ensuring real-time interactions.</li>
+                        <li>The new frontend provided a smoother and more intuitive user experience.</li>
+                    </ul>
+                </li>
+                <li><span>Enhanced Security: </span>
+                    <ul>
+                        <li>Eliminated vulnerabilities in API communications.</li>
+                        <li>Ensured compliance with data protection standards.</li>
+                    </ul>
+                </li>
+                <li><span>Better User Engagement: </span>
+                    <ul>
+                        <li>Multi-turn conversations made the chatbot more interactive and human-like.</li>
+                        <li>The NLP model's accuracy improved, reducing incorrect responses by 40%.</li>
+                    </ul>
+                </li>
+                <li><span>Seamless Integration with ServiceNow: </span>
+                    <ul>
+                        <li>Reduced manual workload by automating common service requests.</li>
+                        <li>Improved data consistency and reporting by ensuring secure, structured communication.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section class="main-section">
+        <div class="content">
+            <h1 class="title">Conclusion</h1>
+            <p>By re-architecting the chatbot, I was able to transform an underperforming and insecure system into a
+                robust, scalable, and secure AI assistant. My approach of leveraging the Microsoft Bot Framework,
+                implementing advanced NLP techniques, and enforcing strong security practices significantly improved the
+                chatbot’s performance and usability. This project not only enhanced the Red Cross’s ability to interact
+                with users but also set a new standard for chatbot security and efficiency.</p>
+        </div>
+    </section>
+    <footer class="footer has-background-inherit">
+        <div class="content has-text-centered">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <div class="box is-rounded has-background-inherit" style="border: 1px solid var(--highlight)">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <h1 class="title is-size-3 m-0">Collaborate?</h1>
+                            </div>
+                            <div class="column">
+                                <p>Like what you read and want to work together? I would love to hear from you</p>
+                            </div>
+                            <div class="column">
+                                <a class="button cta is-responsive is-medium is-outlined is-rounded" target="_blank"
+                                    href="mailto:niranjan.salimath@gmail.com">Get In Touch!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
